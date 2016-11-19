@@ -1,0 +1,64 @@
+import java.util.HashMap;
+	import java.util.Map;
+public class chaaars {
+	
+	    public static void main(String[] args) 
+	    {
+	        final Map<Character, Integer> map;
+	        final String str = "Мама мыла раму";
+
+	        map = new HashMap<>();  
+	        
+	        map.put('а', 1);
+	        map.put('б', 2);
+	        map.put('в', 3);
+	        map.put('г', 4);
+	        map.put('д', 5);
+	        map.put('е', 6);
+	        map.put('ё', 7);
+	        map.put('ж', 8);
+	        map.put('з', 9);
+	        map.put('и', 10);
+	        map.put('й', 11);
+	        map.put('к', 12);
+	        map.put('л', 13);
+	        map.put('м', 14);
+	        map.put('н', 15);
+	        map.put('о', 16);
+	        map.put('п', 17);
+	        map.put('р', 18);
+	        map.put('с', 19);
+	        map.put('т', 20);
+	        map.put('у', 21);
+	        map.put('ф', 22);
+	        map.put('х', 23);
+	        map.put('ц', 24);
+	        map.put('ч', 25);
+	        map.put('ш', 26);
+	        map.put('щ', 27);
+	        map.put('ъ', 28);
+	        map.put('ы', 29);
+	        map.put('ь', 30);
+	        map.put('э', 31);
+	        map.put('ю', 32);
+	        map.put('я',33 );
+
+	        for(final char c : str.toCharArray())
+	        {
+	            final Integer val;
+
+	            val = map.get(c);
+
+	            if(val == null)
+	            {   
+	               
+	            }
+	            else
+	            {
+	                System.out.print(val + " ");
+	            }
+	        }
+
+	        System.out.println();
+	    }
+}
