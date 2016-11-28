@@ -1,0 +1,83 @@
+package Figures;
+
+public interface Figure {
+	public void equation();
+	public boolean symmetricx();
+	public boolean symmetricy();
+	public boolean symmetriceveryline();
+}
+
+__________________________________________________________________
+package Figures;
+
+public class Circumference implements Figure{
+
+	
+
+	@Override
+	public void equation() {
+		System.out.println("(x-a)^2+(y-b)^2=r^2");
+		
+	}
+
+	@Override
+	public boolean symmetricx() {
+		return true;
+	}
+
+	@Override
+	public boolean symmetricy() {
+		return true;
+	}
+
+	@Override
+	public boolean symmetriceveryline() {
+		return true;
+	}
+	
+
+}
+
+____________________________________________________________________
+package Figures;
+
+public class Oval implements Figure{
+
+	@Override
+	public void equation() {
+		System.out.println("x^2/a^2+y^2/b^2=1");
+		
+	}
+
+	@Override
+	public boolean symmetricx() {
+		return true;
+	}
+
+	@Override
+	public boolean symmetricy() {
+		return true;
+	}
+
+	@Override
+	public boolean symmetriceveryline() {
+		return false;
+	}
+	
+
+}
+____________________________________________________________________________________________
+package Figures;
+
+public class Program {
+	public static void main(String[] args){
+		Circumference O1 = new Circumference();
+		O1.symmetricx();
+		O1.equation();
+		Oval O2 = new Oval();
+		O2.equation();
+		O2.symmetriceveryline();
+		
+		
+	}
+}
