@@ -1,0 +1,98 @@
+package samsung.myitschool.messenger;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    public void onSendMessage(View view){
+        EditText messageView = (EditText) findViewById(R.id.message) ;
+        String messageText = messageView.getText().toString();
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, messageText);
+        startActivity(intent);
+    }
+}
+
+_________________________________________________________________________________________________
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="samsung.myitschool.messenger.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:id="@+id/textView" />
+
+    <Button
+        android:text="@string/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/send"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="31dp"
+        android:onClick="onSendMessage"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/message"
+        android:ems="10"
+        android:layout_alignLeft="@+id/send"
+        android:layout_below="@+id/send"
+        android:layout_marginTop="18dp"/>
+</RelativeLayout>
+
+____________________________________________________________________________________________________
+
+<resources>
+    <string name="app_name">Messenger</string>
+    <string name="send">Send Message</string>
+</resources>
+
+=====================================================================================================
+
+<?xml version="1.0" encoding="utf-8"?>
+<education
+	<objectname>School
+		<rooms>
+			<insidetheclass>
+				<desk>20</desk>
+				<blackboard><presence="yes"></blackboard>
+				<electronicboard><presence="yes"></electronicboard>
+			</insidetheclass>
+			<insidethegym>
+				<ball><quantityofballs="100"></ball>
+				<mat><quantityofmats="20"></mat>
+			</insidethegym>
+		</rooms>
+	<students>
+		<forms><formnumber="from 7 to 11"></formnumber>
+		<quantityofstudents>765</quantityofstudents>
+	</students>
+	<teachers>
+		<quantityofteachers>76</quantityofteachers>
+	</teachers>
+	</objectname>
+</education>
